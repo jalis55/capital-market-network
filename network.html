@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CM Network</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+  <style>
+    body {
+      background-color: #0a0a23;
+      overflow: hidden;
+    }
+
+    .node {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .glow {
+      box-shadow: 0 0 12px rgba(255,255,255,0.8);
+    }
+
+    .path-line {
+      stroke-dasharray: 6;
+      stroke-dashoffset: 0;
+      animation: dash 4s linear infinite;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -24;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Wrapper -->
+  <div id="wrapper" class="relative w-screen h-screen">
+
+    <!-- SVG for Connections -->
+    <svg id="connections" class="absolute inset-0 w-full h-full"></svg>
+
+    <!-- Node Container -->
+    <div id="nodes" class="absolute inset-0"></div>
+
+  </div>
+
+</body>
+</html>
